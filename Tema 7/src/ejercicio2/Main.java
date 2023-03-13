@@ -15,8 +15,8 @@ public class Main {
 		//System.out.println(libro1.devolucion("titulo", "autor")  ? "Gracias por devolverlo" : "No puede realizar esa devolucion");
 		
 		System.out.println();
-		System.out.println(libro2.prestamo("titulo", "autor") ? "Recoga su libro por favor" : "No puede realizar ese prestamo ahora mismo");
-		System.out.println(libro2.devolucion("titulo", "autor")  ? "Gracias por devolverlo" : "No puede realizar esa devolucion");
+		System.out.println(libro2.prestamo("titulo", "autor") ? "No puede realizar ese prestamo ahora mismo":"Recoga su libro por favor");
+		System.out.println(libro2.devolucion("titulo", "autor")  ? "No puede realizar esa devolucion":"Gracias por devolverlo");
 
 	}
 

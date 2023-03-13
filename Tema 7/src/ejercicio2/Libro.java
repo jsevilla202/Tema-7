@@ -22,7 +22,7 @@ public class Libro {
 		boolean prestamo = false;
 		int i = 0;
 		
-		while(i<this.titulo.length || (this.titulo[i] == titulo && this.autor[i] == autor)) {
+		while(i<this.titulo.length && (this.titulo[i] == titulo && this.autor[i] == autor)) {
 			i++;
 		}
 		
@@ -39,7 +39,7 @@ public class Libro {
 		boolean devolucion = false;
 		int i = 0;
 		
-		while(i<this.titulo.length || (this.titulo[i] == titulo && this.autor[i] == autor)) {
+		while(i<this.titulo.length && (this.titulo[i] == titulo && this.autor[i] == autor)) {
 			i++;
 		}
 		
