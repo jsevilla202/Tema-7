@@ -3,20 +3,20 @@ package ejercicio2;
 public class Main {
 
 	public static void main(String[] args) {
-		String titulo[] = {"titulo", "Las increibles aventuras de Juan Perez", "titulo2"};
-		String autor[] = {"autor", "Juan de las Cabezas de San Juan Dominguez de la Huerta Perez", "autor2"};
-		int ejemplares[] = {2, 4, 7};
-		int prestados[] = {5, 3, 0};
 		
-		//Libro libro1 = new Libro();
-		Libro libro2 = new Libro(titulo, autor, ejemplares, prestados);
+		Libro libro1 = new Libro();
+		Libro libro2 = new Libro("Juan de las Cabezas de San Juan Dominguez de la Huerta Perez", "Juan Perez", 10, 0);
+		Libro libro3 = new Libro("Jaime de los Santos Sevilla de Cordoba Álvarez", "Jaime Sevilla", 10, 10);
 		
-		//System.out.println(libro1.prestamo("titulo", "autor") ? "Recoga su libro por favor" : "No puede realizar ese prestamo ahora mismo");
-		//System.out.println(libro1.devolucion("titulo", "autor")  ? "Gracias por devolverlo" : "No puede realizar esa devolucion");
-		
+		System.out.println(libro1.devolucion()? "Su libro ha sido devuelto":"Su libro no ha podido ser devuelto");
+		System.out.println(libro1.prestamo()? "Aquí tiene su libro":"Este libro no puede ser prestado actualmente");
 		System.out.println();
-		System.out.println(libro2.prestamo("titulo", "autor") ? "No puede realizar ese prestamo ahora mismo":"Recoga su libro por favor");
-		System.out.println(libro2.devolucion("titulo", "autor")  ? "No puede realizar esa devolucion":"Gracias por devolverlo");
+		System.out.println(libro2.devolucion()? "Su libro ha sido devuelto":"Su libro no ha podido ser devuelto");
+		System.out.println(libro2.prestamo()? "Aquí tiene su libro":"Este libro no puede ser prestado actualmente");
+		System.out.println();
+		System.out.println(libro3.devolucion()? "Su libro ha sido devuelto":"Su libro no ha podido ser devuelto");
+		System.out.println(libro3.prestamo()? "Aquí tiene su libro":"Este libro no puede ser prestado actualmente");
+		System.out.println();
 
 	}
 

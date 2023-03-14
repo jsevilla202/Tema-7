@@ -1,54 +1,76 @@
 package ejercicio2;
 
+/**
+ *  Clase de las funciones relacionadas con la biblioteca
+ * @author Jaime Sevilla
+ *
+ */
 public class Libro {
-	String titulo[];
-	String autor[];
-	int ejemplares[];
-	int prestados[];
+	/**
+	 * Nombre del libro
+	 */
+	String titulo;
+	/**
+	 * Nombre del autor del libro
+	 */
+	String autor;
+	/**
+	 * Numero de ejemplares disponibles
+	 */
+	final int ejemplares;
+	/**
+	 * Numero de ejemplares prestados
+	 */
+	int prestados;
 	
+	/**
+	 * Constructor por defecto
+	 */
 	public Libro() {
 		super();
+		this.ejemplares = 0;
 	}
 
-	public Libro(String[] titulo, String[] autor, int[]ejemplares, int[]prestados) {
+
+	/**
+	 * Constructor de todos los parametros
+	 * @param titulo Parametro que recibe el valor del titulo
+	 * @param autor Parametro que recibe el valor del autor
+	 * @param ejemplares Parametro que recibe el valor de los ejemplares
+	 * @param prestados Parametro que recibe el valor de los prestados
+	 */
+	public Libro(String titulo, String autor, int ejemplares, int prestados) {
 		super();
 		this.titulo = titulo;
 		this.autor = autor;
 		this.ejemplares = ejemplares;
 		this.prestados = prestados;
 	}
-	
-	boolean prestamo(String titulo, String autor) {
+
+
+	/**
+	 * Comprueba si el prestamo es posible o no
+	 * @return Devuelve si se puede o no realizar el prestamo
+	 */
+	boolean prestamo() {
 		boolean prestamo = false;
-		int i = 0;
-		
-		while(i<this.titulo.length && (this.titulo[i] == titulo && this.autor[i] == autor)) {
-			i++;
-		}
-		
-		if((this.titulo[i] == titulo && this.autor[i] == autor) && ejemplares[i]>0) {
+		if(prestados < ejemplares) {
 			prestamo = true;
-			ejemplares[i]--;
-			prestados[i]++;
+			prestados++;
 		}
-		
-		return prestamo;
+			return prestamo;
 	}
 	
-	boolean devolucion(String titulo, String autor) {
+	/**
+	 * Comprueba si la devolucion es posible o no
+	 * @return Devuelve si es posible o no la devolucion
+	 */
+	boolean devolucion() {
 		boolean devolucion = false;
-		int i = 0;
-		
-		while(i<this.titulo.length && (this.titulo[i] == titulo && this.autor[i] == autor)) {
-			i++;
-		}
-		
-		if((this.titulo[i] == titulo && this.autor[i] == autor) && prestados[i]>0) {
+		if(prestados > ejemplares) {
 			devolucion = true;
-			ejemplares[i]++;
-			prestados[i]--;
+			prestados--;
 		}
-		
 		return devolucion;
 	}
 	
