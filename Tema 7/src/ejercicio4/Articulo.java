@@ -1,10 +1,10 @@
 package ejercicio4;
 
 public class Articulo {
-	String nombre;
-	double precio;
-	final int iva = 21;
-	int cuantosQuedan;
+	private String nombre;
+	private double precio;
+	public static final int IVA = 21;
+	private int cuantosQuedan;
 	
 	public Articulo(String nombre, double precio, int cuantosQuedan) {
 		super();
@@ -14,13 +14,13 @@ public class Articulo {
 	}
 	
 	void imprime() {
-		System.out.println("El producto " + nombre + " tiene un precio de " + (precio+(precio*(iva/100))) + " y quedan " + cuantosQuedan + " en el almacen");
+		System.out.println("El producto " + nombre + " tiene un precio de " + (precio+(precio*(IVA/100))) + " y quedan " + cuantosQuedan + " en el almacen");
 	}
 	
 	double getPVP() {
 		double precioiva;
 		
-		precioiva = precio+ precio*iva/100;
+		precioiva = precio+ precio*IVA/100;
 		
 		return precioiva;
 	}
@@ -29,7 +29,7 @@ public class Articulo {
 		double precioiva;
 		double preciodescuento;
 		
-		precioiva = precio+(precio*(iva/100));
+		precioiva = precio+(precio*(IVA/100));
 		
 		preciodescuento = precioiva - precioiva*(descuento/100);
 		
